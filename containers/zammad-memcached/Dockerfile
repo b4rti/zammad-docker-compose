@@ -1,7 +1,6 @@
 FROM memcached:alpine
-MAINTAINER Zanmmad <info@zammad.org>
 
-ENV MEMCACHED_SIZE 256M
+ENV MEMCACHED_SIZE 4096M
 
 LABEL org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.name="Zammad" \

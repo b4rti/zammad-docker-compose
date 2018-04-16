@@ -1,5 +1,4 @@
 FROM ruby:2.4.4-slim
-MAINTAINER Zammad <info@zammad.org>
 ARG BUILD_DATE
 
 ENV ZAMMAD_DIR /opt/zammad
