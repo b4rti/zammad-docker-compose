@@ -1,4 +1,4 @@
-FROM ruby:2.4.2-slim
+FROM ruby:2.4.4-slim
 MAINTAINER Zammad <info@zammad.org>
 ARG BUILD_DATE
 
@@ -8,7 +8,7 @@ ENV RAILS_ENV production
 ENV RAILS_SERVER puma
 ENV PROJECT_URL https://github.com/b4rti/zammad
 ENV GIT_URL ${PROJECT_URL}.git
-ENV GIT_BRANCH stable
+ENV GIT_BRANCH develop
 ENV ZAMMAD_TMP_DIR /tmp/zammad-${GIT_BRANCH}
 ENV TAR_GZ_URL ${PROJECT_URL}/archive/${GIT_BRANCH}.tar.gz
 ENV GOSU_VERSION 1.10
