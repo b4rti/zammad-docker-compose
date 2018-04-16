@@ -26,6 +26,8 @@ services:
     depends_on:
       - zammad-postgresql
     image: ${IMAGE_REPO}:zammad${VERSION}
+    mem_limit: 8192m
+    memswap_limit: 8192m
     links:
       - zammad-elasticsearch
       - zammad-postgresql
@@ -51,6 +53,13 @@ services:
       - zammad-data:/opt/zammad
     expose:
       - "80"
+    environment:
+      - "VIRTUAL_HOST=chat.dev.solvio.io"
+      - "LETSENCRYPT_HOST=chat.dev.solvio.io"
+      - "LETSENCRYPT_EMAIL=info@solvio.io"
+    networks:
+      - default
+      - webproxy
 
   zammad-postgresql:
     image: ${IMAGE_REPO}:zammad-postgresql${VERSION}
@@ -108,3 +117,8 @@ volumes:
     driver: local
   zammad-data:
     driver: local
+
+networks:
+    webproxy:
+       external:
+         name: webproxy
