@@ -19,7 +19,7 @@ https://docs.zammad.org/en/latest/install-docker-compose.html
 
 ## Build Status
 
-[![Build Status](https://travis-ci.org/zammad/zammad-docker-compose.svg?branch=master)](https://travis-ci.org/zammad/zammad-docker-compose)
+[![Build Status](https://travis-ci.org/b4rti/zammad-docker-compose.svg?branch=master)](https://travis-ci.org/b4rti/zammad-docker-compose)
 
 
 ## Using a reverse proxy

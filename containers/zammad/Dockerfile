@@ -6,7 +6,7 @@ ENV ZAMMAD_DIR /opt/zammad
 ENV ZAMMAD_USER zammad
 ENV RAILS_ENV production
 ENV RAILS_SERVER puma
-ENV PROJECT_URL https://github.com/zammad/zammad
+ENV PROJECT_URL https://github.com/b4rti/zammad
 ENV GIT_URL ${PROJECT_URL}.git
 ENV GIT_BRANCH stable
 ENV ZAMMAD_TMP_DIR /tmp/zammad-${GIT_BRANCH}
@@ -19,7 +19,7 @@ LABEL org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.license="AGPL-3.0" \
       org.label-schema.description="Docker container for Zammad - Data Container" \
       org.label-schema.url="https://zammad.org" \
-      org.label-schema.vcs-url="https://github.com/zammad/zammad" \
+      org.label-schema.vcs-url="https://github.com/b4rti/zammad" \
       org.label-schema.vcs-type="Git" \
       org.label-schema.vendor="Zammad" \
       org.label-schema.schema-version="1.2" \
@@ -56,7 +56,7 @@ RUN groupadd -g 1000 ${ZAMMAD_USER} \
     && chown -R ${ZAMMAD_USER}:${ZAMMAD_USER} ${ZAMMAD_TMP_DIR}
 
 # docker init
-COPY containers/zammad/docker-entrypoint.sh /
+COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 

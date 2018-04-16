@@ -16,7 +16,7 @@ spec:
               claimName: zammad-backup
           containers:
           - name: zammad-backup
-            image: zammad/zammad-docker-compose:zammad-postgresql
+            image: b4rti/zammad-docker-compose:zammad-postgresql
             args: [ "zammad-backup-db" ]
             volumeMounts:
              - name: zammad-backup
